@@ -27,7 +27,8 @@ int main(void)
         }
         result += (10 * (first - '0')) + (second - '0');
     }
-
     printf("%d\n", result);
+
+    fclose(fp);
     return 0;
 }

@@ -6,6 +6,10 @@
 int main(void)
 {
     FILE *fp = fopen("test.txt", "r");
+    if (fp == NULL) {
+        return 1;
+    }
+
     char words[][6] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
     int digits[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -57,7 +61,8 @@ int main(void)
         }
         result += (10 * (first - '0')) + (second - '0');
     }
-
     printf("%d\n", result);
+
+    fclose(fp);
     return 0;
 }
